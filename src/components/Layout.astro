@@ -1,4 +1,6 @@
 ---
+import Navbar from '../components/Navbar.astro';
+
 const { title = "Ahmed Mahmoud" } = Astro.props;
 ---
 
@@ -15,6 +17,7 @@ const { title = "Ahmed Mahmoud" } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-background text-text">
+    <Navbar />
     <slot />
   </body>
 </html>
