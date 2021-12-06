@@ -1,24 +1,24 @@
-<section id="home" class="container mx-auto p-7 lg:p-14 flex">
-  <div class="mr-5">
-    <h1 class="font-serif text-5xl leading-snug mb-5">
+<section id="home" class="container mx-auto h-screen p-7 pb-5 lg:p-14 lg:pb-10 flex items-center">
+  <div>
+    <h1 class="font-serif text-6xl mb-9 leading-tight">
       Building <i class="italic text-primary font-normal">Performant</i>,
-      <wbr />
+      <br />
       <i class="italic text-primary font-normal">Beautiful</i> Apps.
     </h1>
 
-    <p class="text-xl">
+    <p class="text-xl mb-12 leading-relaxed">
       Hi, I’m Ahmed. I’m a JavaScript Developer with over 5 years of experience building quality software.
     </p>
 
     <a
       href="#about"
-      class="bg-primary text-background uppercase font-bold mt-10 px-7 py-4 rounded-full inline-block text-lg transition duration-300 transform hover:bg-accent hover:scale-110 hover:-rotate-2 active:scale-95"
+      class="bg-primary text-background uppercase font-bold px-7 py-4 rounded-full inline-block text-lg transition duration-300 transform hover:bg-accent hover:scale-110 hover:-rotate-2 active:scale-95"
     >
       Get To Know Me
     </a>
   </div>
 
-  <div>
-    <img class="w-4/5 relative bottom-6" src={Astro.resolve('../images/space.png')} />
+  <div class="ml-auto p-10">
+    <img src={Astro.resolve('../images/space.png')} />
   </div>
 </section>
