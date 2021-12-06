@@ -2,6 +2,9 @@
   "name": "@example/minimal",
   "version": "0.0.1",
   "private": true,
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,5 +14,8 @@
   "devDependencies": {
     "astro": "^0.21.10",
     "tailwindcss": "^2.2.19"
+  },
+  "dependencies": {
+    "@astrojs/renderer-svelte": "^0.2.2"
   }
 }
