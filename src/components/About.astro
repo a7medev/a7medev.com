@@ -7,11 +7,15 @@
 <section id="about" class="px-7 py-14 bg-background-light text-center lg:text-left">
   <div class="container mx-auto grid lg:grid-cols-4 lg:gap-14">
     <div class="w-1/2 mx-auto mb-10 lg:w-auto lg:m-0 lg:col-span-1 relative before:rounded-3xl before:absolute before:top-0 before:left-0 before:w-full before:h-full before:transform before:rotate-3 before:bg-primary">
-      <img
-        src={Astro.resolve('../images/ahmed.jpeg')}
-        alt="Ahmed Mahmoud"
-        class="transform -rotate-3 rounded-3xl w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500 transition-filter"
-      />
+      <picture>
+        <source srcset="/images/ahmed.webp" type="image/webp" />
+        <source srcset="/images/ahmed.jpeg" type="image/jpeg" />
+        <img
+          src="/images/ahmed.jpeg"
+          alt="Ahmed Mahmoud"
+          class="transform -rotate-3 rounded-3xl w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500 transition-filter"
+        />
+      </picture>
     </div>
 
     <div class="lg:col-span-3">

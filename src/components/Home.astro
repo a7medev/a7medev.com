@@ -36,7 +36,11 @@
 
 <section id="home" class="container mx-auto min-h-screen p-7 lg:flex flex-row-reverse text-center lg:text-left items-center">
   <div class="mx-auto lg:ml-auto p-10 lg:w-auto">
-    <img src={Astro.resolve('../images/space.png')} alt="Astronaut floating in space" />
+    <picture>
+      <source srcset="/images/space.webp" type="image/webp" />
+      <source srcset="/images/space.png" type="image/png" />
+      <img src="/images/space.png" alt="Astronaut floating in space" />
+    </picture>
   </div>
 
   <div>
