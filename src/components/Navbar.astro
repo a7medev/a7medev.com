@@ -1,70 +1,70 @@
 <style>
-.top-dash-shown {
-  animation: show-top-dash forwards 750ms;
-}
-@keyframes show-top-dash {
-  50% {
-    top: 50%;
-    transform: translateY(-50%);
+  .top-dash-shown {
+    animation: show-top-dash forwards 750ms;
   }
-  100% {
-    top: 50%;
-    transform: rotate(45deg) translateY(-50%);
+  @keyframes show-top-dash {
+    50% {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    100% {
+      top: 50%;
+      transform: rotate(45deg) translateY(-50%);
+    }
   }
-}
 
-.top-dash-hidden {
-  animation: hide-top-dash forwards 750ms;
-}
-@keyframes hide-top-dash {
-  0% {
-    top: 50%;
-    transform: rotate(45deg) translateY(-50%);
+  .top-dash-hidden {
+    animation: hide-top-dash forwards 750ms;
   }
-  50% {
-    top: 50%;
-    transform: rotate(0) translateY(-50%);
+  @keyframes hide-top-dash {
+    0% {
+      top: 50%;
+      transform: rotate(45deg) translateY(-50%);
+    }
+    50% {
+      top: 50%;
+      transform: rotate(0) translateY(-50%);
+    }
+    100% {
+      top: 0;
+      transform: rotate(0) translateY(0);
+    }
   }
-  100% {
-    top: 0;
-    transform: rotate(0) translateY(0);
-  }
-}
 
-.bottom-dash-shown {
-  animation: show-bottom-dash forwards 750ms;
-}
-@keyframes show-bottom-dash {
-  0% {
-    top: 100%;
+  .bottom-dash-shown {
+    animation: show-bottom-dash forwards 750ms;
   }
-  50% {
-    top: 50%;
-    transform: translateY(-50%);
+  @keyframes show-bottom-dash {
+    0% {
+      top: 100%;
+    }
+    50% {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    100% {
+      top: 50%;
+      transform: rotate(-45deg) translateY(-50%);
+    }
   }
-  100% {
-    top: 50%;
-    transform: rotate(-45deg) translateY(-50%);
-  }
-}
 
-.bottom-dash-hidden {
-  animation: hide-bottom-dash forwards 750ms;
-}
-@keyframes hide-bottom-dash {
-  0% {
-    top: 50%;
-    transform: rotate(-45deg) translateY(-50%);
+  .bottom-dash-hidden {
+    animation: hide-bottom-dash forwards 750ms;
   }
-  50% {
-    top: 50%;
-    transform: rotate(0) translateY(-50%);
+  @keyframes hide-bottom-dash {
+    0% {
+      top: 50%;
+      transform: rotate(-45deg) translateY(-50%);
+    }
+    50% {
+      top: 50%;
+      transform: rotate(0) translateY(-50%);
+    }
+    100% {
+      top: 100%;
+      transform: rotate(0) translateY(0);
+    }
   }
-  100% {
-    top: 100%;
-    transform: rotate(0) translateY(0);
-  }
-}
 </style>
 
 <nav
@@ -73,8 +73,8 @@
   <div class="container mx-auto flex items-center justify-between flex-wrap py-5" v-scope="{ show: false }">
     <img src={Astro.resolve('../images/logo.svg')} alt="Ahmed Mahmoud" />
 
-    <!-- Toggle button -->
-    <button @click="show = !show" class="lg:hidden h-6 w-12 relative">
+    <button @click="show = !show" class="lg:hidden h-4 w-8 relative">
+      <span class="sr-only">Toggle Navbar</span>
       <span v-bind:class="[show ? 'top-dash-shown' : 'top-dash-hidden', 'bg-text w-full h-0.5 block absolute top-0']"></span>
       <span v-bind:class="[{ 'scale-x-0': show }, 'bg-text w-full h-0.5 block absolute transition-transform']"></span>
       <span v-bind:class="[show ? 'bottom-dash-shown' : 'bottom-dash-hidden', 'bg-text w-full h-0.5 block absolute']"></span>
