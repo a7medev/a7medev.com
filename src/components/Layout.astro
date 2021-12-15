@@ -1,5 +1,5 @@
 ---
-import Navbar from '../components/Navbar.astro';
+import Navbar from '../components/Navbar.svelte';
 
 const { title = "Ahmed Mahmoud" } = Astro.props;
 ---
@@ -17,10 +17,9 @@ const { title = "Ahmed Mahmoud" } = Astro.props;
     <meta name="image" content={Astro.resolve('../images/ahmed.jpeg')} />
     <meta name="description" content="Ahmed Mahmoud is a JavaScript Developer with over 5 years of experience building quality software." />
     <title>{title}</title>
-    <script src="https://unpkg.com/petite-vue" defer init></script>
   </head>
   <body class="bg-background text-text">
-    <Navbar />
+    <Navbar client:media="(max-width: 1023px)" />
     <slot />
   </body>
 </html>

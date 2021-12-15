@@ -75,7 +75,7 @@
     react "^17.0.2"
     react-dom "^17.0.2"
 
-"@astrojs/renderer-svelte@0.2.2":
+"@astrojs/renderer-svelte@0.2.2", "@astrojs/renderer-svelte@^0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@astrojs/renderer-svelte/-/renderer-svelte-0.2.2.tgz#ff8182aabb3228126f77176bbe7a407cbb1e6c1b"
   integrity sha512-6fs/skQURDvn2K/TVAgOmqcMUaGuocV7EwAzthHTJzlfRQUbNEWmyLtuvjcSCZnY+28vupKjEarWl3IsyqJh6Q==
