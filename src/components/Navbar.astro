@@ -1,13 +1,101 @@
-<nav class="fixed top-0 left-0 w-full px-7 z-10 bg-background">
-  <div class="container mx-auto h-16 flex justify-between items-center">
+<style>
+.top-dash-shown {
+  animation: show-top-dash forwards 750ms;
+}
+@keyframes show-top-dash {
+  50% {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  100% {
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+  }
+}
+
+.top-dash-hidden {
+  animation: hide-top-dash forwards 750ms;
+}
+@keyframes hide-top-dash {
+  0% {
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+  }
+  50% {
+    top: 50%;
+    transform: rotate(0) translateY(-50%);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0) translateY(0);
+  }
+}
+
+.bottom-dash-shown {
+  animation: show-bottom-dash forwards 750ms;
+}
+@keyframes show-bottom-dash {
+  0% {
+    top: 100%;
+  }
+  50% {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  100% {
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+}
+
+.bottom-dash-hidden {
+  animation: hide-bottom-dash forwards 750ms;
+}
+@keyframes hide-bottom-dash {
+  0% {
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+  }
+  50% {
+    top: 50%;
+    transform: rotate(0) translateY(-50%);
+  }
+  100% {
+    top: 100%;
+    transform: rotate(0) translateY(0);
+  }
+}
+</style>
+
+<nav
+  class="fixed top-0 left-0 w-full px-7 z-10 bg-gradient-to-b from-background via-background/80 to-transparent"
+>
+  <div class="container mx-auto flex items-center justify-between flex-wrap py-5" v-scope="{ show: false }">
     <img src={Astro.resolve('../images/logo.svg')} alt="Ahmed Mahmoud" />
 
-    <ul class="flex">
-      <li class="transition mx-3 hover:text-primary"><a href="#home">Home</a></li>
-      <li class="transition mx-3 hover:text-primary"><a href="#about">About</a></li>
-      <li class="transition mx-3 hover:text-primary"><a href="#skills">Skills</a></li>
-      <li class="transition mx-3 hover:text-primary"><a href="#portfolio">Portfolio</a></li>
-      <li class="transition mx-3 hover:text-primary"><a href="#contact">Contact</a></li>
+    <!-- Toggle button -->
+    <button @click="show = !show" class="lg:hidden h-6 w-12 relative">
+      <span v-bind:class="[show ? 'top-dash-shown' : 'top-dash-hidden', 'bg-text w-full h-0.5 block absolute top-0']"></span>
+      <span v-bind:class="[{ 'scale-x-0': show }, 'bg-text w-full h-0.5 block absolute transition-transform']"></span>
+      <span v-bind:class="[show ? 'bottom-dash-shown' : 'bottom-dash-hidden', 'bg-text w-full h-0.5 block absolute']"></span>
+    </button>
+
+    <ul v-bind:class="[show ? 'h-40' : 'h-0', 'w-full lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto pt-6 lg:pt-0 transition-[height] duration-500 overflow-hidden']">
+      <li class="transition mx-3 hover:text-primary">
+        <a href="#home">Home</a>
+      </li>
+      <li class="transition mx-3 hover:text-primary">
+        <a href="#about">About</a>
+      </li>
+      <li class="transition mx-3 hover:text-primary">
+        <a href="#skills">Skills</a>
+      </li>
+      <li class="transition mx-3 hover:text-primary">
+        <a href="#portfolio">Portfolio</a>
+      </li>
+      <li class="transition mx-3 hover:text-primary">
+        <a href="#contact">Contact</a>
+      </li>
     </ul>
   </div>
 </nav>
