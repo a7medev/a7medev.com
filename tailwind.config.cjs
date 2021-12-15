@@ -10,8 +10,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Readex Pro', 'system-ui'],
-      serif: ['DM Serif Display', 'Georgia'],
+      sans: ['Inter', 'system-ui', 'sans-serif'],
+      serif: ['DM Serif Display', 'serif'],
     },
     colors: {
       transparent: 'transparent',
