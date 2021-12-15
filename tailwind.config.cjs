@@ -10,7 +10,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Inter', 'system-ui'],
+      sans: ['Readex Pro', 'system-ui'],
       serif: ['DM Serif Display', 'Georgia'],
     },
     colors: {

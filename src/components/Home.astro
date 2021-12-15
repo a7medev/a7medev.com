@@ -15,7 +15,7 @@
 
   @keyframes slide {
     to {
-      top: 0rem;
+      top: 0;
       opacity: 1;
     }
   }
@@ -35,12 +35,12 @@
 </style>
 
 <section id="home" class="container mx-auto min-h-screen p-7 lg:flex flex-row-reverse text-center lg:text-left items-center">
-  <div class="mx-auto lg:ml-auto p-10 w-5/6 lg:w-auto">
+  <div class="mx-auto lg:ml-auto p-10 lg:w-auto">
     <img src={Astro.resolve('../images/space.png')} alt="Astronaut floating in space" />
   </div>
 
   <div>
-    <h1 class="font-serif text-6xl mb-9 leading-tight">
+    <h1 class="font-serif text-5xl xl:text-6xl leading-[1.125] xl:leading-tight mb-9">
       <span>
         <span class="sliding" style="--delay: 0">
           Building <i class="italic text-primary">Performant</i>,
@@ -63,7 +63,7 @@
 
     <a
       href="#about"
-      class="bg-primary text-background uppercase font-bold px-7 py-4 rounded-full inline-block text-lg transition duration-300 transform hover:bg-accent hover:scale-110 hover:-rotate-2 active:scale-95 btn"
+      class="shadow-lg bg-primary text-background uppercase font-bold px-7 py-4 rounded-full inline-block text-lg transition duration-300 transform hover:bg-accent hover:scale-110 hover:-rotate-2 hover:shadow-accent/25 active:scale-95 btn"
       style="--delay: 1200ms"
     >
       Get To Know Me
