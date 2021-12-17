@@ -12,7 +12,9 @@
   <div
     class="container mx-auto flex items-center justify-between flex-wrap py-5"
   >
-    <img src="/images/logo.svg" alt="Ahmed Mahmoud" />
+    <a href="/">
+      <img src="/images/logo.svg" alt="Ahmed Mahmoud" />
+    </a>
 
     <button on:click={toggle} class="lg:hidden h-4 w-8 relative">
       <span class="sr-only">Toggle Navbar</span>
@@ -38,19 +40,19 @@
         : 'h-0'}"
     >
       <li class="transition mx-3 hover:text-primary">
-        <a href="#home">Home</a>
+        <a href="/#home">Home</a>
       </li>
       <li class="transition mx-3 hover:text-primary">
-        <a href="#about">About</a>
+        <a href="/#about">About</a>
       </li>
       <li class="transition mx-3 hover:text-primary">
-        <a href="#skills">Skills</a>
+        <a href="/#skills">Skills</a>
       </li>
       <li class="transition mx-3 hover:text-primary">
-        <a href="#portfolio">Portfolio</a>
+        <a href="/#portfolio">Portfolio</a>
       </li>
       <li class="transition mx-3 hover:text-primary">
-        <a href="#contact">Contact</a>
+        <a href="/#contact">Contact</a>
       </li>
     </ul>
   </div>
