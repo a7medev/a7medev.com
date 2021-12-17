@@ -2,17 +2,17 @@
 const { name, image } = Astro.props;
 ---
 
-<div class="group bg-background-light relative p-10 text-center transition hover:scale-105 hover:rotate-2">
+<div class="group bg-background-light relative p-5 lg:p-10 text-center transition hover:scale-105 hover:rotate-2 hover:text-accent">
   <img src={image} alt={name} class="aspect-square object-contain w-3/4 mx-auto mb-6" />
-  <h3 class="text-xl font-bold">{name}</h3>
+  <h3 class="text-lg md:text-xl font-bold">{name}</h3>
 
   <!-- Border -->
   <!-- Left -->
-  <span class="absolute left-0 bottom-0 w-1 h-0 bg-accent group-hover:h-full transition-[height] duration-300" />
+  <span class="absolute left-0 bottom-0 w-0.5 h-0 bg-accent group-hover:h-full transition-[height] duration-300" />
   <!-- Top -->
-  <span class="absolute top-0 left-0 h-1 w-0 bg-accent group-hover:w-full transition-[width] duration-300" />
+  <span class="absolute top-0 left-0 h-0.5 w-0 bg-accent group-hover:w-full transition-[width] duration-300" />
   <!-- Right -->
-  <span class="absolute right-0 top-0 w-1 h-0 bg-accent group-hover:h-full transition-[height] duration-300" />
+  <span class="absolute right-0 top-0 w-0.5 h-0 bg-accent group-hover:h-full transition-[height] duration-300" />
   <!-- Bottom -->
-  <span class="absolute bottom-0 right-0 h-1 w-0 bg-accent group-hover:w-full transition-[width] duration-300" />
+  <span class="absolute bottom-0 right-0 h-0.5 w-0 bg-accent group-hover:w-full transition-[width] duration-300" />
 </div>
