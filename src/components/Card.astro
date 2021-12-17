@@ -1,0 +1,13 @@
+<div class="group bg-background-light relative text-center shadow-none transition hover:scale-105 hover:rotate-1 hover:text-accent hover:shadow-lg hover:shadow-accent/20">
+  <slot />
+
+  <!-- Border -->
+  <!-- Left -->
+  <span class="absolute left-0 bottom-0 w-0.5 h-0 bg-accent group-hover:h-full transition-[height] duration-300" />
+  <!-- Top -->
+  <span class="absolute top-0 left-0 h-0.5 w-0 bg-accent group-hover:w-full transition-[width] duration-300" />
+  <!-- Right -->
+  <span class="absolute right-0 top-0 w-0.5 h-0 bg-accent group-hover:h-full transition-[height] duration-300" />
+  <!-- Bottom -->
+  <span class="absolute bottom-0 right-0 h-0.5 w-0 bg-accent group-hover:w-full transition-[width] duration-300" />
+</div>
