@@ -1,0 +1,16 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout title="Page Not Found | Ahmed Mahmoud">
+  <div class="flex flex-col justify-center items-center w-screen min-h-screen p-10 text-center">
+    <picture>
+      <source srcset="/images/not-found.webp" type="image/webp" />
+      <source srcset="/images/not-found.png" type="image/png" />
+      <img src="/images/not-found.png" alt="Page not found" class="w-52 md:w-80 mx-auto mb-6" />
+    </picture>
+
+    <h1 class="text-7xl font-bold mb-6 text-primary">404</h1>
+    <p class="text-xl">Oops! The page you're looking for is not found!</p>
+  </div>
+</Layout>
