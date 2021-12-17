@@ -1,0 +1,21 @@
+---
+import AnimatedBorder from './AnimatedBorder.astro';
+
+const { name, description, images } = Astro.props;
+---
+
+<div class="group bg-background relative text-center transition hover:scale-105 hover:rotate-1 hover:text-accent">
+  <picture>
+    {images.map(image => (
+      <source srcset={image.src} type={image.type} />
+    ))}
+    <img src={images[0].src} alt={name} />
+  </picture>
+
+  <div class="p-5 lg:p-10">
+    <h3 class="text-lg md:text-xl font-bold mb-3">{name}</h3>
+    <p class="text-text opacity-80">{description}</p>
+  </div>
+
+  <AnimatedBorder />
+</div>
