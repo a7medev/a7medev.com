@@ -4,6 +4,25 @@
   function toggle() {
     show = !show;
   }
+
+  const links = [
+    {
+      name: 'Home',
+      href: '/#home',
+    },
+    {
+      name: 'About',
+      href: '/#about',
+    },
+    {
+      name: 'Skills',
+      href: '/#skills',
+    },
+    {
+      name: 'Work',
+      href: '/#work',
+    },
+  ];
 </script>
 
 <nav
@@ -35,25 +54,18 @@
     </button>
 
     <ul
+      on:click={toggle}
       class="w-full lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto pt-6 lg:pt-0 transition-[height] duration-500 overflow-hidden {show
         ? 'h-40'
         : 'h-0'}"
     >
-      <li class="transition mx-3 hover:text-primary">
-        <a href="/#home">Home</a>
-      </li>
-      <li class="transition mx-3 hover:text-primary">
-        <a href="/#about">About</a>
-      </li>
-      <li class="transition mx-3 hover:text-primary">
-        <a href="/#skills">Skills</a>
-      </li>
-      <li class="transition mx-3 hover:text-primary">
-        <a href="/#portfolio">Portfolio</a>
-      </li>
-      <li class="transition mx-3 hover:text-primary">
-        <a href="/#contact">Contact</a>
-      </li>
+      {#each links as link}
+        <li
+          class="transition px-3 hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-full"
+        >
+          <a href={link.href} class="block py-1 text-center">{link.name}</a>
+        </li>
+      {/each}
     </ul>
   </div>
 </nav>
