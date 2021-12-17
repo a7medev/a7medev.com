@@ -1,0 +1,62 @@
+---
+import Skill from './Skill.astro';
+
+const skills = [
+  {
+    name: "JavaScript",
+    image: "/images/skills/js.svg",
+  },
+  {
+    name: "TypeScript",
+    image: "/images/skills/ts.svg"
+  },
+  {
+    name: "React.js",
+    image: "/images/skills/react.svg"
+  },
+  {
+    name: "React Native",
+    image: "/images/skills/react.svg"
+  },
+  {
+    name: "Redux",
+    image: "/images/skills/redux.svg"
+  },
+  {
+    name: "Node.js",
+    image: "/images/skills/node.svg"
+  },
+  {
+    name: "Next.js",
+    image: "/images/skills/next.svg"
+  },
+  {
+    name: "Firebase",
+    image: "/images/skills/firebase.svg"
+  },
+  {
+    name: "Jest",
+    image: "/images/skills/jest.svg"
+  },
+  {
+    name: "Tailwind CSS",
+    image: "/images/skills/tailwind.svg"
+  },
+  {
+    name: "Docker",
+    image: "/images/skills/docker.png"
+  },
+];
+---
+
+<section id="skills" class="px-7 py-14">
+  <div class="container mx-auto">
+    <h2 class="font-serif text-4xl mb-5">Here’s a subset of <span class="italic text-primary">my skills</span>.</h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+      {skills.map(skill => (
+        <Skill name={skill.name} image={skill.image} />
+      ))}
+    </div>
+  </div>
+</section>
