@@ -19,7 +19,7 @@ const { title = "Ahmed Mahmoud" } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-background text-text">
-    <Navbar client:media="(max-width: 1023px)" />
+    <Navbar client:load />
     <slot />
   </body>
 </html>

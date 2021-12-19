@@ -1,5 +1,8 @@
 <script lang="ts">
+  import { onMount, onDestroy } from 'svelte';
+
   let show = false;
+  let navbarShadow = false;
 
   function toggle() {
     show = !show;
@@ -23,9 +26,32 @@
       href: '/#work',
     },
   ];
+
+  const onScroll = () => {
+    if (window.scrollY > 50) {
+      navbarShadow = true;
+    } else {
+      navbarShadow = false;
+    }
+  };
+
+  onMount(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', onScroll);
+    }
+  });
+
+  onDestroy(() => {
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('scroll', onScroll);
+    }
+  });
 </script>
 
-<nav class="fixed top-0 left-0 w-full px-7 z-10 bg-background">
+<nav
+  class="fixed top-0 left-0 w-full px-7 z-10 bg-background transition-shadow"
+  class:shadow-lg={navbarShadow}
+>
   <div
     class="container mx-auto flex items-center justify-between flex-wrap py-3 px-7"
   >
@@ -59,15 +85,17 @@
     <ul
       on:click={toggle}
       id="navbar-content"
-      class="w-full lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto lg:pt-0 transition-[height,padding] duration-500 overflow-hidden {show
-        ? 'h-40 pt-6'
-        : 'h-0 pt-0'}"
+      class="w-full box-border pt-6 lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto lg:pt-0 transition-[height,padding] duration-500 overflow-hidden {show
+        ? 'h-48'
+        : 'h-0'}"
     >
       {#each links as link}
-        <li
-          class="transition px-3 hover:bg-primary hover:bg-opacity-10 hover:text-primary rounded-full"
-        >
-          <a href={link.href} class="block py-1 text-center">{link.name}</a>
+        <li>
+          <a
+            href={link.href}
+            class="block py-2 px-4 text-center hover:text-primary"
+            >{link.name}</a
+          >
         </li>
       {/each}
     </ul>
