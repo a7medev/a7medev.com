@@ -27,7 +27,7 @@
 
 <nav class="fixed top-0 left-0 w-full px-7 z-10 bg-background">
   <div
-    class="container mx-auto flex items-center justify-between flex-wrap py-5"
+    class="container mx-auto flex items-center justify-between flex-wrap py-3 px-7"
   >
     <a href="/">
       <img src="/images/logo.svg" alt="Ahmed Mahmoud" />
