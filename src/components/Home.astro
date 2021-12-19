@@ -1,39 +1,3 @@
-<style lang="scss">
-  /* Heading slide animation */
-  h1 > span {
-    display: inline-block;
-    overflow: hidden;
-  }
-
-  .sliding {
-    position: relative;
-    opacity: 0;
-    top: -5rem;
-    animation: slide 750ms ease-out forwards;
-    animation-delay: var(--delay);
-  }
-
-  @keyframes slide {
-    to {
-      top: 0;
-      opacity: 1;
-    }
-  }
-
-  /* Subheading/Button fade animation */
-  .subtitle, .btn {
-    opacity: 0;
-    animation: fade 750ms ease-out forwards;
-    animation-delay: var(--delay);
-  }
-
-  @keyframes fade {
-    to {
-      opacity: 1;
-    }
-  }
-</style>
-
 <section id="home" class="container mx-auto min-h-screen p-7 lg:grid grid-cols-2 text-center lg:text-left items-center">
   <div class="mx-auto p-10 order-2">
     <picture>
@@ -74,3 +38,40 @@
     </a>
   </div>
 </section>
+
+<style>
+  /* Heading slide animation */
+  h1 > span {
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .sliding {
+    position: relative;
+    opacity: 0;
+    top: -5rem;
+    animation: slide 750ms ease-out forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes slide {
+    to {
+      top: 0;
+      opacity: 1;
+    }
+  }
+
+  /* Subheading/Button fade animation */
+  .subtitle, .btn {
+    opacity: 0;
+    animation: fade 750ms ease-out forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes fade {
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+

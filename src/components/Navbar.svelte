@@ -25,9 +25,7 @@
   ];
 </script>
 
-<nav
-  class="fixed top-0 left-0 w-full px-7 z-10 bg-gradient-to-b from-background via-background/80 to-transparent"
->
+<nav class="fixed top-0 left-0 w-full px-7 z-10 bg-background">
   <div
     class="container mx-auto flex items-center justify-between flex-wrap py-5"
   >
@@ -35,8 +33,13 @@
       <img src="/images/logo.svg" alt="Ahmed Mahmoud" />
     </a>
 
-    <button on:click={toggle} class="lg:hidden h-4 w-8 relative">
-      <span class="sr-only">Toggle Navbar</span>
+    <button
+      on:click={toggle}
+      class="lg:hidden h-4 w-8 relative"
+      aria-controls="navbar-content"
+      aria-expanded={show}
+      aria-label="Toggle navigation"
+    >
       <span
         class="bg-text w-full h-0.5 block absolute top-0 {show
           ? 'top-dash-shown'
@@ -55,9 +58,10 @@
 
     <ul
       on:click={toggle}
-      class="w-full lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto pt-6 lg:pt-0 transition-[height] duration-500 overflow-hidden {show
-        ? 'h-40'
-        : 'h-0'}"
+      id="navbar-content"
+      class="w-full lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto lg:pt-0 transition-[height,padding] duration-500 overflow-hidden {show
+        ? 'h-40 pt-6'
+        : 'h-0 pt-0'}"
     >
       {#each links as link}
         <li
