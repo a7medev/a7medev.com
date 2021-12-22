@@ -85,9 +85,9 @@
     <ul
       on:click={toggle}
       id="navbar-content"
-      class="w-full box-border pt-6 lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto lg:pt-0 transition-[height,padding] duration-500 overflow-hidden {show
-        ? 'h-48'
-        : 'h-0'}"
+      class="w-full box-border lg:flex lg:items-center lg:w-auto lg:order-2 lg:h-auto lg:pt-0 transition-[height,padding] duration-500 overflow-hidden {show
+        ? 'h-48 pt-6'
+        : 'h-0 pt-0'}"
     >
       {#each links as link}
         <li>
