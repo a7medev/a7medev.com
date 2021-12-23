@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
+  import NavbarToggle from './NavbarToggle.svelte';
 
   let show = false;
   let navbarShadow = false;
@@ -53,34 +54,13 @@
   class:shadow-lg={navbarShadow}
 >
   <div
-    class="container mx-auto flex items-center justify-between flex-wrap py-3 px-7"
+    class="container mx-auto flex items-center justify-between flex-wrap py-3"
   >
     <a href="/">
       <img src="/images/logo.svg" alt="Ahmed Mahmoud" />
     </a>
 
-    <button
-      on:click={toggle}
-      class="lg:hidden h-4 w-8 relative"
-      aria-controls="navbar-content"
-      aria-expanded={show}
-      aria-label="Toggle navigation"
-    >
-      <span
-        class="bg-text w-full h-0.5 block absolute top-0 {show
-          ? 'top-dash-shown'
-          : 'top-dash-hidden'}"
-      />
-      <span
-        class:scale-x-0={show}
-        class="bg-text w-full h-0.5 block absolute transition-transform"
-      />
-      <span
-        class="bg-text w-full h-0.5 block absolute {show
-          ? 'bottom-dash-shown'
-          : 'bottom-dash-hidden'}"
-      />
-    </button>
+    <NavbarToggle onToggle={toggle} {show} />
 
     <ul
       on:click={toggle}
@@ -94,79 +74,11 @@
           <a
             href={link.href}
             class="block py-2 px-4 text-center hover:text-primary"
-            >{link.name}</a
           >
+            {link.name}
+          </a>
         </li>
       {/each}
     </ul>
   </div>
 </nav>
-
-<style>
-  .top-dash-shown {
-    animation: show-top-dash forwards 750ms;
-  }
-  @keyframes show-top-dash {
-    50% {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    100% {
-      top: 50%;
-      transform: rotate(45deg) translateY(-50%);
-    }
-  }
-
-  .top-dash-hidden {
-    animation: hide-top-dash forwards 750ms;
-  }
-  @keyframes hide-top-dash {
-    0% {
-      top: 50%;
-      transform: rotate(45deg) translateY(-50%);
-    }
-    50% {
-      top: 50%;
-      transform: rotate(0) translateY(-50%);
-    }
-    100% {
-      top: 0;
-      transform: rotate(0) translateY(0);
-    }
-  }
-
-  .bottom-dash-shown {
-    animation: show-bottom-dash forwards 750ms;
-  }
-  @keyframes show-bottom-dash {
-    0% {
-      top: 100%;
-    }
-    50% {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    100% {
-      top: 50%;
-      transform: rotate(-45deg) translateY(-50%);
-    }
-  }
-
-  .bottom-dash-hidden {
-    animation: hide-bottom-dash forwards 750ms;
-  }
-  @keyframes hide-bottom-dash {
-    0% {
-      top: 50%;
-      transform: rotate(-45deg) translateY(-50%);
-    }
-    50% {
-      top: 50%;
-      transform: rotate(0) translateY(-50%);
-    }
-    100% {
-      top: 100%;
-      transform: rotate(0) translateY(0);
-    }
-  }
-</style>
