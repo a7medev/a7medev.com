@@ -26,6 +26,11 @@
       name: 'Work',
       href: '/#work',
     },
+    {
+      name: 'Blog',
+      href: 'https://blog.a7medev.com',
+      newTab: true,
+    },
   ];
 
   const onScroll = () => {
@@ -71,12 +76,23 @@
     >
       {#each links as link}
         <li>
-          <a
-            href={link.href}
-            class="block py-2 px-4 text-center hover:text-primary"
-          >
-            {link.name}
-          </a>
+          {#if link.newTab}
+            <a
+              href={link.href}
+              class="block py-2 px-4 text-center hover:text-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              {link.name}
+            </a>
+          {:else}
+            <a
+              href={link.href}
+              class="block py-2 px-4 text-center hover:text-primary"
+            >
+              {link.name}
+            </a>
+          {/if}
         </li>
       {/each}
     </ul>
