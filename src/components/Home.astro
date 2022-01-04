@@ -1,5 +1,5 @@
 <section id="home" class="container mx-auto min-h-screen p-7 pt-10 lg:grid grid-cols-2 text-center lg:text-left items-center">
-  <div class="mx-auto p-10 order-2">
+  <div class="mx-auto p-10 order-2 zoom-out">
     <picture>
       <source srcset="/images/space.webp" type="image/webp" />
       <source srcset="/images/space.png" type="image/png" />
@@ -11,13 +11,23 @@
     <h1 class="font-serif text-5xl xl:text-6xl leading-[1.125] xl:leading-tight mb-9">
       <span>
         <span class="sliding" style="--delay: 0">
-          Building <i class="italic text-primary">Performant</i>,
+          Building
+        </span>
+      </span>
+      <span>
+        <span class="sliding" style="--delay: 150ms">
+          <i class="italic text-primary">Performant</i>,
         </span>
       </span>
       <br />
       <span>
         <span class="sliding" style="--delay: 300ms">
-          <i class="italic text-primary">Beautiful</i> Apps.
+          <i class="italic text-primary">Beautiful</i>
+        </span>
+      </span>
+      <span>
+        <span class="sliding" style="--delay: 450ms">
+          Apps.
         </span>
       </span>
     </h1>
@@ -47,17 +57,33 @@
   }
 
   .sliding {
-    position: relative;
+    display: inline-block;
     opacity: 0;
-    top: -5rem;
-    animation: slide 750ms ease-out forwards;
+    transform: translateY(-5rem);
+    animation: slide 1s ease-out forwards;
     animation-delay: var(--delay);
   }
 
   @keyframes slide {
-    to {
-      top: 0;
+    50% {
       opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .zoom-out {
+    opacity: 0;
+    transform: scale(1.2);
+    animation: zoom-out 1s ease-in-out forwards;
+  }
+
+  @keyframes zoom-out {
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
