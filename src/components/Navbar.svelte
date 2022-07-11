@@ -54,11 +54,12 @@
   });
 </script>
 
-<nav
+<header
   class="fixed top-0 left-0 w-full px-7 z-10 bg-background transition-shadow"
   class:shadow-lg={navbarShadow}
 >
-  <div
+  <nav
+    aria-label="Main navigation"
     class="container mx-auto flex items-center justify-between flex-wrap py-3"
   >
     <a href="/">
@@ -96,5 +97,5 @@
         </li>
       {/each}
     </ul>
-  </div>
-</nav>
+  </nav>
+</header>
