@@ -1,5 +1,6 @@
 ---
 import Navbar from '../components/Navbar.svelte';
+import SkipToContent from './SkipToContent.astro';
 
 const { title = "Ahmed Mahmoud" } = Astro.props;
 ---
@@ -19,7 +20,10 @@ const { title = "Ahmed Mahmoud" } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-background text-text">
+    <SkipToContent />
     <Navbar client:load />
-    <slot />
+    <main id="content">
+      <slot />
+    </main>
   </body>
 </html>
