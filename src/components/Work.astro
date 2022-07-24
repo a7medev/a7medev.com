@@ -4,9 +4,9 @@ import Project from './Project.astro';
 const projects = Astro.fetchContent("../projects/**/*.md");
 ---
 
-<section id="work" class="bg-background-light">
+<section id="work" class="bg-background-lighter dark:bg-background-dark">
   <div class="container mx-auto px-7 py-14">
-    <h2 class="font-serif text-4xl mb-10">Some of <span class="italic text-primary">my work</span>.</h2>
+    <h2 class="font-serif text-4xl mb-10">Some of <span class="italic text-primary-darker dark:text-primary-light">my work</span>.</h2>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {projects.map(project => (

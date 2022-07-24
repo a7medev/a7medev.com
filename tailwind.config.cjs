@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   content: [
     './public/**/*.html',
     './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
@@ -31,12 +32,24 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      primary: '#FAB316',
-      accent: '#37d2ff',
-      text: '#fff',
+      primary: {
+        light: '#FAB316',
+        dark: '#ef541a',
+        darker: '#cf3d07',
+      },
+      accent: {
+        light: '#37d2ff',
+        dark: '#084c91',
+      },
+      text: {
+        light: '#fff',
+        dark: '#111',
+      },
       background: {
-        DEFAULT: '#04213F',
-        light: '#04294F',
+        light: '#aed2fa',
+        lighter: '#c4dffd',
+        dark: '#04294F',
+        darker: '#04213F',
       },
     },
   },

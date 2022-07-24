@@ -42,8 +42,19 @@
   };
 
   onMount(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', onScroll);
+    if (typeof window === 'undefined') return;
+
+    window.addEventListener('scroll', onScroll);
+
+    const theme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    ).matches;
+
+    if (theme === 'dark' || (!theme && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
   });
 
@@ -55,7 +66,7 @@
 </script>
 
 <header
-  class="fixed top-0 left-0 w-full px-7 z-10 bg-background transition-shadow"
+  class="fixed top-0 left-0 w-full px-7 z-10 bg-background-light dark:bg-background-darker transition-shadow"
   class:shadow-lg={navbarShadow}
 >
   <nav
@@ -80,7 +91,7 @@
           {#if link.newTab}
             <a
               href={link.href}
-              class="block py-2 px-4 text-center hover:text-primary"
+              class="block py-2 px-4 text-center hover:text-primary-darker dark:hover:text-primary-light"
               target="_blank"
               rel="noopener"
             >
@@ -89,7 +100,7 @@
           {:else}
             <a
               href={link.href}
-              class="block py-2 px-4 text-center hover:text-primary"
+              class="block py-2 px-4 text-center hover:text-primary-darker dark:hover:text-primary-light"
             >
               {link.name}
             </a>
